@@ -1,0 +1,422 @@
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Background Image */
+.background-img {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+.background-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 1s ease-in-out;
+}
+
+/* Body */
+body {
+    display: flex;
+    height: 100vh;
+    background-color: #fff;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 200px;
+    background-color: transparent;
+    box-shadow: none;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.wave-logo {
+    width: 200px;
+    margin-right: 20px;
+}
+
+.brand-name {
+    font-size: 36px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.nav-header .nav-link {
+    text-decoration: none;
+    margin-right: 20px;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 600;
+    transition: color 0.3s;
+    cursor: pointer;
+}
+
+.nav-header .nav-link:hover {
+    color: #E00D0D;
+    text-decoration: underline;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 200px;
+    background-color: #f8f8f8;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+.sidebar .menu-item {
+    text-decoration: none;
+    color: #555;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 12px 15px;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 8px;
+}
+
+.sidebar .menu-item:hover {
+    background-color: #E00D0D;
+    color: #fff;
+}
+
+.sidebar .menu-item img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s;
+}
+
+.sidebar .menu-item:hover img {
+    transform: scale(1.1);
+}
+
+.sidebar .menu-item.active {
+    background-color: #E00D0D;
+    color: #fff;
+    font-weight: 600;
+}
+
+/* Main Content */
+.content {
+    margin-left: 200px;
+    padding: 20px;
+    width: calc(100% - 200px);
+}
+
+.background-img img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    position: relative;
+}
+
+.search-bar input {
+    width: 70%;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+}
+
+.search-btn {
+    position: absolute;
+    right: 15%;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #E00D0D;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.search-btn:hover {
+    background-color: #E00D0D;
+}
+
+/* Categories */
+.categories {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.category-btn {
+    background-color: #E00D0D;
+    color: #fff;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.category-btn:hover {
+    background-color: #D93C3C;
+}
+
+/* Lagu Paling Hits */
+.hits, .hits-artis {
+    margin: 40px 0;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #E00D0D;
+}
+
+.show-all {
+    color: #E00D0D;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.songs, .artists {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    text-align: center;
+}
+
+.song-item {
+    padding: 10px;
+    font-weight: bold;
+    border-bottom: 2px solid #E00D0D;
+    color: #E00D0D;
+}
+
+/* Song Clickable Effect */
+.song-item {
+    cursor: pointer; /* Mengubah kursor menjadi ikon tangan */
+    padding: 10px;
+    border-radius: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.song-item:hover {
+    background-color: #f9f9f9; /* Latar belakang saat dihover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Tambahkan efek bayangan */
+    transform: translateY(-5px); /* Sedikit naik saat hover */
+}
+
+.song-item:active {
+    transform: scale(0.95); /* Mengecil sedikit saat ditekan */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Efek bayangan lebih kecil */
+}
+
+.artist-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.artist-item img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.artist-item span {
+    font-weight: bold;
+    color: #E00D0D;
+}
+
+/* Artist Clickable Effect */
+.artist-item {
+    cursor: pointer; /* Menunjukkan bahwa elemen dapat di-klik */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.artist-item:active {
+    transform: scale(0.95); /* Efek ditekan */
+}
+
+.artist-item:hover {
+    transform: scale(1.05); /* Efek zoom ringan saat hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Efek bayangan */
+}
+
+
+/* Album Paling Hits */
+.hits-album .albums {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    text-align: center;
+}
+
+.album-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.album-item img {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.album-item strong {
+    font-size: 16px;
+    color: #E00D0D;
+}
+
+.album-item div {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Horizontal Scroll for Albums */
+.hits-album .albums {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto; /* Membuat scroll horizontal */
+    scroll-snap-type: x mandatory; /* Snap item saat digeser */
+    padding-bottom: 10px;
+}
+
+.album-item {
+    flex: 0 0 auto; /* Item tidak mengecil */
+    width: 250px; /* Lebar tetap untuk setiap item */
+    scroll-snap-align: center; /* Snap di tengah */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out; /* Animasi hover */
+}
+
+.album-item img {
+    width: 100%;
+    height: 150px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.album-item:hover {
+    transform: scale(1.05); /* Perbesar item saat dihover */
+}
+
+.hits-album {
+    margin-bottom: 20px;
+}
+
+.hits-album::-webkit-scrollbar {
+    height: 8px; /* Ukuran scrollbar */
+}
+
+.hits-album::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.hits-album::-webkit-scrollbar-thumb {
+    background: #E00D0D; /* Warna scrollbar */
+    border-radius: 10px;
+}
+
+/* General Styling for Login */
+
+
+.login-container {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    max-width: 400px;
+    width: 100%;
+}
+
+.login-box h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #E00D0D;
+}
+
+input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #E00D0D;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.login-btn:hover {
+    background-color: #D93C3C;
+}
+
+.footer {
+    text-align: center;
+}
+
+.footer a {
+    color: #E00D0D;
+    text-decoration: none;
+}
